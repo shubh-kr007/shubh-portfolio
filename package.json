@@ -1,74 +1,35 @@
 {
-  "name": "portfolio",
+  "name": "shubh-portfolio",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@emotion/react": "^11.13.3",
-    "@emotion/styled": "^11.13.0",
-    "@giscus/react": "^3.0.0",
-    "@mui/icons-material": "^6.1.3",
-    "@mui/joy": "^5.0.0-beta.48",
-    "@mui/material": "^6.1.3",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/moment": "^2.11.29",
-    "@types/node": "^16.18.113",
-    "@types/react": "^18.3.11",
-    "@types/react-dom": "^18.3.0",
-    "@types/react-syntax-highlighter": "^15.5.13",
-    "animate.css": "^4.1.1",
-    "axios": "^1.7.7",
-    "contentful": "^11.1.4",
-    "devicons-react": "^1.3.0",
-    "giscus": "^1.5.0",
-    "metascraper": "^5.45.25",
-    "moment": "^2.30.1",
-    "next": "^14.2.15",
-    "react": "^18.3.1",
-    "react-animate-on-scroll": "^2.1.9",
-    "react-dom": "^18.3.1",
-    "react-markdown": "^9.0.1",
-    "react-parallax": "^3.5.1",
-    "react-scroll": "^1.9.0",
-    "react-social-icons": "^6.18.0",
-    "react-syntax-highlighter": "^15.6.1",
-    "rehype-raw": "^7.0.0",
-    "rehype-sanitize": "^6.0.0",
-    "remark-gfm": "^4.0.0",
-    "tech-stack-icons": "^2.1.0",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4",
-    "yaml": "^2.6.0"
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "predeploy": "npm run build && touch ./dist/.nojekyll && echo 'karunika.work' > ./dist/CNAME",
-    "deploy": "gh-pages -d dist -t true",
     "lint": "next lint"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.18",
+    "@mui/joy": "^5.0.0-beta.16",
+    "animate.css": "^4.1.1",
+    "devicons-react": "^1.3.0",
+    "next": "14.0.3",
+    "react": "^18",
+    "react-animate-on-scroll": "^2.1.7",
+    "react-dom": "^18",
+    "react-parallax": "^3.5.1",
+    "react-scroll": "^1.9.0",
+    "react-social-icons": "^6.0.0"
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-scroll": "^1.8.10",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.3",
+    "typescript": "^5"
   }
 }
