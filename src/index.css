@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FAF7F2;
+    color: #1a1a1a;
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #EDE8E0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1a1a1a;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
+
+/* SVG Text Styling for Landing */
+svg {
+    width: 90%;
+    max-width: 800px;
+    animation: fadeIn;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
+svg text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 100px;
+    font-weight: 700;
+    fill: none;
+    stroke: #1a1a1a;
+    stroke-width: 2;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: textStroke 3s ease forwards;
+}
+
+@keyframes textStroke {
+    to {
+        stroke-dashoffset: 0;
+        fill: #1a1a1a;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Section Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Anchor Styles */
+.anchor {
+    text-decoration: none;
+    color: inherit;
+}
+
+.anchor:hover {
+    color: #8B7355;
+}
+
+/* Markdown Container */
+.md-container {
+    line-height: 1.8;
+}
+
+.md-container > * {
+    margin-bottom: 1rem;
+}
+
+/* Selection Color */
+::selection {
+    background-color: #D4C4B0;
+    color: #1a1a1a;
+}

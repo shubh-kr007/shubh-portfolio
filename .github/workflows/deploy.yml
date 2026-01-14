@@ -1,0 +1,45 @@
+name: Deploy to GitHub Pages
+
+on:
+  workflow_dispatch: # Allows manual triggering
+  repository_dispatch:  # Custom event triggered by Contentful Webhook
+    type: [publish_contentful_event]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          ssh-strict: false          # Disable strict checking of the host key
+          persist-credentials: false  # Ensure we use the deploy key
+
+      - name: Set up SSH for Git
+        run: |
+          git remote set-url origin git@github.com:Karunika/portfolio.git
+
+      - name: Check Git Remotes again
+        run: git remote -v
+
+      - name: Setup Node Environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run predeploy
+        env:
+          NEXT_PUBLIC_ACCESS_TOKEN: ${{ secrets.NEXT_PUBLIC_ACCESS_TOKEN }}
+          NEXT_PUBLIC_LINK_PREVIEW_API_KEY: ${{ secrets.NEXT_PUBLIC_LINK_PREVIEW_API_KEY }}
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./dist  # Next.js static files are in the 'dist' folder by default
