@@ -4,7 +4,7 @@ A personal developer portfolio built with **Next.js 14**, **TypeScript**, and **
 
 ## 🌐 Live
 
-[**shubh-portfolio.vercel.app**](https://shubh-portfolio.vercel.app)
+[**shubh-work.vercel.app**](https://shubh-work.vercel.app/)
 
 ## ✨ Features
 
