@@ -1,50 +1,80 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# Shubh's Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A personal developer portfolio built with **Next.js 14**, **TypeScript**, and **MUI Joy UI**, showcasing my experience, projects, skills, and education.
 
-## Available Scripts
+## 🌐 Live
 
-In the project directory, you can run:
+[**shubh-portfolio.vercel.app**](https://shubh-portfolio.vercel.app)
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
+- **Responsive Design** — Optimized for desktop, tablet, and mobile
+- **Scroll Animations** — Smooth fade-in effects powered by `react-animate-on-scroll`
+- **Parallax Sections** — Immersive scrolling experience using `react-parallax`
+- **Project Showcase** — Timeline-style display of projects with live demo & GitHub links
+- **Experience Timeline** — Professional history with tools and descriptions
+- **Skills Grid** — Visual representation of technical skills using `devicons-react`
+- **Education Section** — Academic background with timeline
+- **Contact Section** — Social links via `react-social-icons`
+
+## 🛠 Tech Stack
+
+| Category     | Technologies                                        |
+| ------------ | --------------------------------------------------- |
+| **Framework**| Next.js 14, React 18, TypeScript                    |
+| **UI**       | MUI Joy UI, Emotion (CSS-in-JS)                     |
+| **Animation**| Animate.css, react-animate-on-scroll, react-parallax|
+| **Other**    | react-scroll, react-social-icons, devicons-react    |
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js ≥ 18
+- npm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/shubh-kr007/shubh-portfolio.git
+
+# Navigate to the project
+cd shubh-portfolio
+
+# Install dependencies
+npm install
+```
+
+### Development
+
+```bash
+npm run dev
+```
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Production Build
 
-### `npm test`
+```bash
+npm run build
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📁 Project Structure
 
-### `npm run build`
+```
+src/
+├── app/
+│   ├── _components/    # Reusable UI components
+│   ├── _sections/      # Page sections (Landing, About, Projects, Skills, Education, Contact)
+│   ├── layout.tsx      # Root layout
+│   └── page.tsx        # Home page
+├── content.ts          # Portfolio content data (experience, education)
+├── index.css           # Global styles
+└── utils/              # Utility functions
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📄 License
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-=======
-# shubh-portfolio
->>>>>>> 13e50852d3ecda1528bb42f41aca92ab936730ab
+This project is open source and available under the [MIT License](LICENSE).

@@ -76,6 +76,24 @@ const projects: IProject[] = [
         }
     },
     {
+        title: 'NexChain',
+        subtitle: 'A real-time Ethereum asset tracker',
+        description: [
+            'Developed a high-performance Web3 dashboard to track real-time Ethereum assets using Next.js 16, Ethers.js, and Tailwind CSS.',
+            'Integrated secure MetaMask authentication with direct smart contract interaction for live ETH and USDT balance updates.',
+            'Engineered a persistent session management system with auto-reconnection logic and automatic network validation.',
+            'Resolved complex build compatibility issues between Next.js Turbopack and Ethers.js dependencies for optimized production deployment.'
+        ],
+        technologies: ['Next.js', 'Tailwind CSS', 'Ethers.js', 'Vercel'],
+        github: 'https://github.com/shubh-kr007/NexChain',
+        live: 'https://nex-chain-weld.vercel.app',
+        icon: 'track',
+        time: {
+            start: '02/2026',
+            end: '02/2026'
+        }
+    },
+    {
         title: 'Hirify',
         subtitle: 'AI Job Tracking App',
         description: [
@@ -93,6 +111,7 @@ const projects: IProject[] = [
             end: '06/2025'
         }
     },
+    
     {
         title: 'AI Tools Finder',
         subtitle: 'Discovery Platform',
