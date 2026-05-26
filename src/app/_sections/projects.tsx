@@ -13,6 +13,7 @@ import List from '@mui/joy/List';
 import ListItem from '@mui/joy/ListItem';
 import ListItemDecorator from '@mui/joy/ListItemDecorator';
 import ListItemContent from '@mui/joy/ListItemContent';
+import Box from '@mui/joy/Box';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { useTheme } from '@mui/joy';
 import GitHub from '@mui/icons-material/GitHub';
@@ -152,18 +153,19 @@ const ProjectHead = ({ title, subtitle, time }: IProject) => {
     return (
         <ScrollAnimation animateIn='fadeIn' animateOnce>
             <Stack sx={{
+                width: '100%',
                 ml: 4,
                 [theme.breakpoints.down(800)]: {
                     ml: 2
                 }
             }}>
-                <Typography level='h3' sx={{ color: '#1a1a1a' }}>{title}</Typography>
+                <Typography level='h3' sx={{ color: '#F9FAFB', fontWeight: 600 }}>{title}</Typography>
                 {subtitle && (
-                    <Typography level='h4' sx={{ mb: 1, color: '#6B5344' }}>
+                    <Typography level='h4' sx={{ mb: 1, color: '#14B8A6', fontWeight: 500 }}>
                         {subtitle}
                     </Typography>
                 )}
-                <Typography level='body-sm' sx={{ color: '#8B7355' }}>
+                <Typography level='body-sm' sx={{ color: '#9CA3AF' }}>
                     {`${time.start} - ${time.end}`}
                 </Typography>
             </Stack>
@@ -177,6 +179,7 @@ const ProjectBody = ({ description, technologies, github, live }: IProject) => {
     return (
         <Stack sx={{
             ml: 2,
+            mb: 4,
             [theme.breakpoints.down(800)]: {
                 ml: 0
             }
@@ -186,12 +189,12 @@ const ProjectBody = ({ description, technologies, github, live }: IProject) => {
                     <ListItem key={i} sx={{ alignItems: 'flex-start' }}>
                         <ListItemDecorator>
                             <ScrollAnimation animateIn='fadeIn' animateOnce>
-                                <East fontSize='small' sx={{ color: '#8B7355' }} />
+                                <East fontSize='small' sx={{ color: '#14B8A6' }} />
                             </ScrollAnimation>
                         </ListItemDecorator>
                         <ListItemContent>
                             <ScrollAnimation animateIn='fadeIn' animateOnce>
-                                <Typography sx={{ color: '#4A3728' }}>{point}</Typography>
+                                <Typography sx={{ color: '#D1D5DB' }}>{point}</Typography>
                             </ScrollAnimation>
                         </ListItemContent>
                     </ListItem>
@@ -199,16 +202,17 @@ const ProjectBody = ({ description, technologies, github, live }: IProject) => {
                 <ListItem>
                     <ScrollAnimation animateIn='fadeIn' animateOnce>
                         <Stack direction="row" spacing={1} sx={{ flexWrap: 'wrap', rowGap: 1, alignItems: 'center' }}>
-                            <Typography sx={{ fontWeight: 600, color: '#1a1a1a' }}>Tech Stack: </Typography>
+                            <Typography sx={{ fontWeight: 600, color: '#F9FAFB' }}>Tech Stack: </Typography>
                             {technologies.map((tech, i) => (
                                 <Chip 
                                     key={i} 
                                     variant="soft" 
                                     size="sm"
                                     sx={{
-                                        backgroundColor: '#D4C4B0',
-                                        color: '#1a1a1a',
-                                        fontWeight: 500
+                                        backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                                        color: '#E5E7EB',
+                                        fontWeight: 500,
+                                        border: '1px solid rgba(255, 255, 255, 0.05)'
                                     }}
                                 >
                                     {tech}
@@ -229,11 +233,12 @@ const ProjectBody = ({ description, technologies, github, live }: IProject) => {
                                     size="sm"
                                     startDecorator={<GitHub />}
                                     sx={{
-                                        borderColor: '#1a1a1a',
-                                        color: '#1a1a1a',
+                                        borderColor: 'rgba(255, 255, 255, 0.15)',
+                                        color: '#F9FAFB',
                                         '&:hover': {
-                                            backgroundColor: '#1a1a1a',
-                                            color: '#FAF7F2',
+                                            borderColor: '#14B8A6',
+                                            backgroundColor: 'rgba(20, 184, 166, 0.08)',
+                                            color: '#14B8A6',
                                         }
                                     }}
                                 >
@@ -249,10 +254,11 @@ const ProjectBody = ({ description, technologies, github, live }: IProject) => {
                                     size="sm"
                                     startDecorator={<Launch />}
                                     sx={{
-                                        backgroundColor: '#1a1a1a',
-                                        color: '#FAF7F2',
+                                        backgroundColor: '#14B8A6',
+                                        color: '#030712',
+                                        fontWeight: 600,
                                         '&:hover': {
-                                            backgroundColor: '#333',
+                                            backgroundColor: '#0D9488',
                                         }
                                     }}
                                 >
@@ -271,15 +277,15 @@ const Projects = () => {
     const theme = useTheme()
 
     return (
-        <SectionLayout odd fullHeight col name='projects'>
+        <SectionLayout odd col name='projects' sx={{ py: 12 }}>
             <ScrollAnimation animateIn='fadeInLeft' animateOnce={true}>
-                <Typography level='h1' sx={{ color: '#1a1a1a' }}>Projects</Typography>
+                <Typography level='h1' sx={{ color: '#F9FAFB', mb: 4 }}>Projects</Typography>
             </ScrollAnimation>
             <Stepper orientation="vertical" sx={{
                 '--StepIndicator-size': '5rem',
                 '--Step-connectorRadius': '1rem',
                 '--Step-connectorThickness': '2px',
-                '--Step-connectorColor': '#D4C4B0',
+                '--Step-connectorColor': 'rgba(255, 255, 255, 0.08)',
                 mt: 3,
                 [theme.breakpoints.down(800)]: {
                     '--StepIndicator-size': '3.5rem',
@@ -287,9 +293,9 @@ const Projects = () => {
                 [`.${stepIndicatorClasses.root}`]: {
                     overflow: 'hidden',
                     position: 'relative',
-                    borderColor: '#1a1a1a',
-                    backgroundColor: '#FAF7F2',
-                    color: '#1a1a1a',
+                    borderColor: 'rgba(20, 184, 166, 0.3)',
+                    backgroundColor: 'rgba(20, 184, 166, 0.1)',
+                    color: '#14B8A6',
                 }
             }}>
                 {projects.map((project, i) => (

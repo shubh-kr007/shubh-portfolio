@@ -13,20 +13,20 @@ const About = () => {
     return (
         <SectionLayout name='about'>
             <ScrollAnimation animateIn='fadeInLeft' animateOnce>
-                <Typography level='h1' sx={{ color: '#1a1a1a' }}>About me</Typography>
+                <Typography level='h1' sx={{ color: '#F9FAFB' }}>About me</Typography>
             </ScrollAnimation>
             <ScrollAnimation animateIn='fadeIn' animateOnce>
                 <Typography level='body-sm'
                     startDecorator={
-                        <LocationOn fontSize='small' sx={{ color: '#8B7355' }} />
+                        <LocationOn fontSize='small' sx={{ color: '#14B8A6' }} />
                     }
-                    sx={{ ml: -1, mb: 2, color: '#6B5344' }}
+                    sx={{ ml: -1, mb: 2, color: '#9CA3AF' }}
                 >
                     Noida, India
                 </Typography>
             </ScrollAnimation>
             <ScrollAnimation animateIn='fadeIn' animateOnce>
-                <Typography sx={{ color: '#4A3728', lineHeight: 1.8 }}>{aboutMe}</Typography>
+                <Typography sx={{ color: '#D1D5DB', lineHeight: 1.8 }}>{aboutMe}</Typography>
             </ScrollAnimation>
             <Link
                 role="menuitem"
@@ -37,11 +37,11 @@ const About = () => {
                 })}
                 sx={{ 
                     mt: 2, 
-                    color: '#8B7355',
+                    color: '#14B8A6',
                     fontWeight: 500,
                     textDecoration: 'none',
                     '&:hover': {
-                        color: '#1a1a1a',
+                        color: '#0D9488',
                         textDecoration: 'underline'
                     }
                 }}

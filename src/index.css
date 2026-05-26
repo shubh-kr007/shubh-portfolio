@@ -12,8 +12,8 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #FAF7F2;
-    color: #1a1a1a;
+    background-color: #030712;
+    color: #F9FAFB;
     overflow-x: hidden;
 }
 
@@ -23,16 +23,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: #EDE8E0;
+    background: #0b0f19;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #1a1a1a;
+    background: #14B8A6;
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #333;
+    background: #0D9488;
 }
 
 /* SVG Text Styling for Landing */
@@ -49,7 +49,7 @@ svg text {
     font-size: 100px;
     font-weight: 700;
     fill: none;
-    stroke: #1a1a1a;
+    stroke: #F9FAFB;
     stroke-width: 2;
     stroke-dasharray: 500;
     stroke-dashoffset: 500;
@@ -59,7 +59,7 @@ svg text {
 @keyframes textStroke {
     to {
         stroke-dashoffset: 0;
-        fill: #1a1a1a;
+        fill: #F9FAFB;
     }
 }
 
@@ -135,7 +135,7 @@ svg text {
 }
 
 .anchor:hover {
-    color: #8B7355;
+    color: #14B8A6;
 }
 
 /* Markdown Container */
@@ -149,6 +149,44 @@ svg text {
 
 /* Selection Color */
 ::selection {
-    background-color: #D4C4B0;
-    color: #1a1a1a;
+    background-color: #14B8A6;
+    color: #030712;
+}
+
+/* Modern UI Classes */
+.gradient-text {
+    background: linear-gradient(135deg, #14B8A6 0%, #6366F1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+.glass-glow-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.glass-glow-card:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 12px 30px -10px rgba(20, 184, 166, 0.25) !important;
+    border-color: rgba(20, 184, 166, 0.3) !important;
+}
+
+.tech-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center;
+    mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 90%);
+    -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 90%);
+    pointer-events: none;
+    z-index: 1;
 }

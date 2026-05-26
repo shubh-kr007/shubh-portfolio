@@ -56,11 +56,11 @@ const Nav = () => {
                 sx={{
                     pointerEvents: 'auto',
                     p: scrolled ? 1.5 : 1,
-                    backgroundColor: scrolled ? '#FAF7F2' : 'rgba(250, 247, 242, 0.95)',
+                    backgroundColor: scrolled ? 'rgba(3, 7, 18, 0.85)' : 'rgba(3, 7, 18, 0.3)',
                     backdropFilter: 'blur(10px)',
                     borderRadius: scrolled ? '0 0 12px 12px' : '0 0 6px 6px',
-                    boxShadow: scrolled ? '0 4px 20px rgba(0,0,0,0.15)' : 'none',
-                    borderBottom: scrolled ? '1px solid #D4C4B0' : 'none',
+                    boxShadow: scrolled ? '0 4px 20px rgba(0,0,0,0.3)' : 'none',
+                    borderBottom: scrolled ? '1px solid rgba(255, 255, 255, 0.08)' : 'none',
                     transition: 'all 0.4s ease',
                     animation: 'fadeInDown',
                     animationDuration: '1s',
@@ -70,7 +70,7 @@ const Nav = () => {
                 <List role="menubar" orientation="horizontal">
                     {['about', 'projects', 'education', 'skills', 'contact'].map((section, i) => (
                         <React.Fragment key={section}>
-                            {i !== 0 && <ListDivider sx={{ backgroundColor: '#D4C4B0' }} />}
+                            {i !== 0 && <ListDivider sx={{ backgroundColor: 'rgba(255, 255, 255, 0.08)' }} />}
                             <ListItem role="none">
                                 <ListItemButton
                                     role="menuitem"
@@ -86,7 +86,7 @@ const Nav = () => {
                                         alignItems: 'center',
                                         justifyContent: 'center',
                                         transition: 'all 0.3s ease',
-                                        color: activeSection === section ? '#8B7355' : '#1a1a1a',
+                                        color: activeSection === section ? '#14B8A6' : '#F9FAFB',
                                         fontWeight: activeSection === section ? 600 : 400,
                                         '&:not(.Mui-selected, [aria-selected="true"]):hover': {
                                             backgroundColor: 'transparent',
@@ -98,14 +98,14 @@ const Nav = () => {
                                             width: activeSection === section ? '80%' : '0%',
                                             height: '2px',
                                             mt: 3,
-                                            backgroundColor: '#1a1a1a',
+                                            backgroundColor: '#14B8A6',
                                             transition: 'all 0.3s ease'
                                         },
                                         '&:hover::after': {
                                             width: '80%',
                                         },
                                         '&:hover': {
-                                            color: '#8B7355'
+                                            color: '#14B8A6'
                                         }
                                     }}
                                 >

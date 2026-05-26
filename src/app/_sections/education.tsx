@@ -14,6 +14,7 @@ interface IEducation {
     institute: string,
     location: string,
     degree?: string,
+    grade?: string,
     time: {
         start: string
         end: string
@@ -54,7 +55,7 @@ const Education = () => {
     return (
         <SectionLayout name='education'>
             <ScrollAnimation animateIn='fadeInLeft' animateOnce>
-                <Typography level='h1' sx={{ color: '#1a1a1a' }}>Education</Typography>
+                <Typography level='h1' sx={{ color: '#F9FAFB' }}>Education</Typography>
             </ScrollAnimation>
 
             <Stack sx={{
@@ -67,16 +68,16 @@ const Education = () => {
                     '--StepIndicator-size': '2.5rem',
                     '--Step-connectorRadius': '1rem',
                     '--Step-connectorThickness': '2px',
-                    '--Step-connectorColor': '#D4C4B0',
+                    '--Step-connectorColor': 'rgba(255, 255, 255, 0.08)',
                 }}>
                     {educations.map(({ institute, location, degree, grade, time: { start, end } }, i: number) =>
                         <Step key={i} indicator={
                             <StepIndicator 
                                 variant="soft"
                                 sx={{
-                                    backgroundColor: '#EDE8E0',
-                                    borderColor: '#1a1a1a',
-                                    color: '#1a1a1a'
+                                    backgroundColor: 'rgba(20, 184, 166, 0.1)',
+                                    borderColor: 'rgba(20, 184, 166, 0.3)',
+                                    color: '#14B8A6'
                                 }}
                             >
                                 <School />
@@ -84,15 +85,15 @@ const Education = () => {
                         }>
                             <Stack>
                                 <ScrollAnimation animateIn='fadeIn' animateOnce>
-                                    <Typography level='h3' sx={{ color: '#1a1a1a' }}>{institute}</Typography>
-                                    <Typography level='body-sm' sx={{ color: '#6B5344' }}>{location}</Typography>
+                                    <Typography level='h3' sx={{ color: '#F9FAFB' }}>{institute}</Typography>
+                                    <Typography level='body-sm' sx={{ color: '#9CA3AF' }}>{location}</Typography>
                                 </ScrollAnimation>
                             </Stack>
                             <Stack>
                                 <ScrollAnimation animateIn='fadeIn' animateOnce>
-                                    {degree && <Typography level='title-md' sx={{ color: '#4A3728' }}>{degree}</Typography>}
-                                    <Typography level='body-sm' sx={{ color: '#8B7355' }}>{`${start} - ${end}`}</Typography>
-                                    <Typography level='body-sm' sx={{ fontWeight: 'bold', color: '#1a1a1a' }}>{grade}</Typography>
+                                    {degree && <Typography level='title-md' sx={{ color: '#14B8A6' }}>{degree}</Typography>}
+                                    <Typography level='body-sm' sx={{ color: '#9CA3AF' }}>{`${start} - ${end}`}</Typography>
+                                    <Typography level='body-sm' sx={{ fontWeight: 'bold', color: '#F9FAFB' }}>{grade}</Typography>
                                 </ScrollAnimation>
                             </Stack>
                         </Step>

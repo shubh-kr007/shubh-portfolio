@@ -10,28 +10,28 @@ import { useTheme } from '@mui/joy';
 import '../index.css'
 import 'animate.css/animate.compat.css';
 
-// Custom Beige & Black Theme
+// Custom Dark Obsidian & Neon Teal Theme
 const customTheme = extendTheme({
     colorSchemes: {
         light: {
             palette: {
                 primary: {
-                    50: '#FAF7F2',
-                    100: '#EDE8E0',
-                    200: '#D4C4B0',
-                    300: '#B8A088',
-                    400: '#8B7355',
-                    500: '#6B5344',
-                    600: '#4A3728',
-                    700: '#3D2E22',
-                    800: '#2A1F17',
-                    900: '#1a1a1a',
-                    solidBg: '#1a1a1a',
-                    solidHoverBg: '#333',
-                    softBg: '#EDE8E0',
-                    softColor: '#1a1a1a',
-                    outlinedBorder: '#1a1a1a',
-                    outlinedColor: '#1a1a1a',
+                    50: '#0f172a',
+                    100: '#1e293b',
+                    200: '#334155',
+                    300: '#475569',
+                    400: '#64748b',
+                    500: '#14B8A6', // Neon Teal
+                    600: '#0D9488',
+                    700: '#0F766E',
+                    800: '#115E59',
+                    900: '#134E4A',
+                    solidBg: '#14B8A6',
+                    solidHoverBg: '#0D9488',
+                    softBg: 'rgba(20, 184, 166, 0.1)',
+                    softColor: '#14B8A6',
+                    outlinedBorder: '#14B8A6',
+                    outlinedColor: '#14B8A6',
                 },
                 neutral: {
                     50: '#FAF7F2',
@@ -42,17 +42,60 @@ const customTheme = extendTheme({
                     500: '#6B5344',
                     600: '#4A3728',
                     700: '#3D2E22',
-                    800: '#2A1F17',
-                    900: '#1a1a1a',
+                    800: '#1e293b',
+                    900: '#030712',
                 },
                 background: {
-                    body: '#FAF7F2',
-                    surface: '#FAF7F2',
+                    body: '#030712', // Obsidian dark
+                    surface: 'rgba(17, 24, 39, 0.7)', // Dark glassmorphic background
                 },
                 text: {
-                    primary: '#1a1a1a',
-                    secondary: '#4A3728',
-                    tertiary: '#6B5344',
+                    primary: '#F9FAFB', // High-contrast off-white
+                    secondary: '#9CA3AF', // Muted slate gray
+                    tertiary: '#6B7280', // Darker gray for metadata
+                },
+            },
+        },
+        dark: {
+            palette: {
+                primary: {
+                    50: '#0f172a',
+                    100: '#1e293b',
+                    200: '#334155',
+                    300: '#475569',
+                    400: '#64748b',
+                    500: '#14B8A6', // Neon Teal
+                    600: '#0D9488',
+                    700: '#0F766E',
+                    800: '#115E59',
+                    900: '#134E4A',
+                    solidBg: '#14B8A6',
+                    solidHoverBg: '#0D9488',
+                    softBg: 'rgba(20, 184, 166, 0.1)',
+                    softColor: '#14B8A6',
+                    outlinedBorder: '#14B8A6',
+                    outlinedColor: '#14B8A6',
+                },
+                neutral: {
+                    50: '#FAF7F2',
+                    100: '#EDE8E0',
+                    200: '#D4C4B0',
+                    300: '#B8A088',
+                    400: '#8B7355',
+                    500: '#6B5344',
+                    600: '#4A3728',
+                    700: '#3D2E22',
+                    800: '#1e293b',
+                    900: '#030712',
+                },
+                background: {
+                    body: '#030712', // Obsidian dark
+                    surface: 'rgba(17, 24, 39, 0.7)', // Dark glassmorphic background
+                },
+                text: {
+                    primary: '#F9FAFB', // High-contrast off-white
+                    secondary: '#9CA3AF', // Muted slate gray
+                    tertiary: '#6B7280', // Darker gray for metadata
                 },
             },
         },
@@ -67,7 +110,7 @@ const customTheme = extendTheme({
                 root: {
                     borderRadius: '8px',
                     fontWeight: 500,
-                    transition: 'all 0.3s ease',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 },
             },
         },
@@ -81,7 +124,10 @@ const customTheme = extendTheme({
         JoyCard: {
             styleOverrides: {
                 root: {
-                    borderRadius: '12px',
+                    borderRadius: '16px',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                    background: 'rgba(17, 24, 39, 0.7)',
+                    backdropFilter: 'blur(12px)',
                 },
             },
         },
@@ -90,11 +136,16 @@ const customTheme = extendTheme({
 
 const Copyright = () => {
     const theme = useTheme()
-    return <Typography sx={{
-        [theme.breakpoints.down(800)]: {
-            order: 2
-        }
-    }}>Copyright © 2026 Shubh Kumar</Typography>
+    return (
+        <Typography sx={{
+            color: '#9CA3AF',
+            [theme.breakpoints.down(800)]: {
+                order: 2
+            }
+        }}>
+            Copyright © 2026 Shubh Kumar
+        </Typography>
+    )
 }
 
 const GoToTop = () => {
@@ -105,11 +156,12 @@ const GoToTop = () => {
             variant='outlined'
             sx={{
                 borderRadius: 20,
-                borderColor: '#1a1a1a',
-                color: '#1a1a1a',
+                borderColor: '#14B8A6',
+                color: '#14B8A6',
                 '&:hover': {
-                    backgroundColor: '#1a1a1a',
-                    color: '#FAF7F2',
+                    backgroundColor: '#14B8A6',
+                    color: '#030712',
+                    borderColor: '#14B8A6',
                 },
                 [theme.breakpoints.down(800)]: {
                     order: 0
@@ -130,7 +182,7 @@ const SocialMedia = () => {
     
     const socialLinks = [
         'https://github.com/shubh-kr007',
-        'www.linkedin.com/in/shubh-kumar-3815a3263/',
+        'https://linkedin.com/in/shubh-kumar-3815a3263/',
         'https://leetcode.com/u/shubh_sri07/',
     ]
 
@@ -155,8 +207,8 @@ const SocialMedia = () => {
                     target="_blank" 
                     url={link}
                     style={{ height: 40, width: 40 }}
-                    bgColor="#1a1a1a"
-                    fgColor="#FAF7F2"
+                    bgColor="rgba(255, 255, 255, 0.08)"
+                    fgColor="#F9FAFB"
                 />
             ))}
         </Stack>
@@ -179,7 +231,7 @@ export default function RootLayout({
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
             </head>
             <body>
-                <CssVarsProvider theme={customTheme}>
+                <CssVarsProvider theme={customTheme} defaultMode="dark">
                     {children}
                     <SectionLayout odd name='footer'>
                         <Stack sx={[(theme) => ({

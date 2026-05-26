@@ -53,7 +53,7 @@ const SectionLayout = ({ children, name, odd = false, fullHeight = false, col = 
                 minHeight: fullHeight ? '100vh' : 'auto',
                 display: 'flex',
                 alignItems: 'center',
-                backgroundColor: odd ? '#EDE8E0' : '#FAF7F2',
+                backgroundColor: odd ? '#0b0f19' : '#030712',
                 transition: 'background-color 0.3s ease',
                 '& > div': {
                     width: '100%'

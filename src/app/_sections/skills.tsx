@@ -152,13 +152,16 @@ const SkillChip = ({ query, filter, name, Icon, keywords }: Props) => {
             opacity: isMatched ? 1 : 0.4,
             order: isMatched ? 1 : 2,
             mx: 1,
-            borderColor: '#D4C4B0',
-            color: '#1a1a1a',
+            my: 0.5,
+            borderColor: 'rgba(255, 255, 255, 0.08)',
+            backgroundColor: 'rgba(255, 255, 255, 0.02)',
+            color: '#F9FAFB',
             transition: 'all 0.3s ease',
             '&:hover': {
                 opacity: 1,
-                borderColor: '#1a1a1a',
-                backgroundColor: '#EDE8E0',
+                borderColor: '#14B8A6',
+                backgroundColor: 'rgba(20, 184, 166, 0.08)',
+                color: '#14B8A6',
                 transform: 'translateY(-2px)',
             }
         }}
@@ -188,50 +191,57 @@ const Skills = () => {
     }
 
     return (
-        <SectionLayout odd name='skills'>
+        <SectionLayout name='skills'>
             <ScrollAnimation animateIn='fadeInLeft' animateOnce>
-                <Typography level='h1' sx={{ color: '#1a1a1a' }}>Skills</Typography>
+                <Typography level='h1' sx={{ color: '#F9FAFB' }}>Skills</Typography>
             </ScrollAnimation>
 
-            <Stack direction='row' spacing={2} sx={{ mt: 2 }}>
+            <Stack direction='row' spacing={2} sx={{ mt: 3 }}>
                 <DebounceInput
                     variant='outlined'
                     size='sm'
-                    placeholder='search a skill...'
+                    placeholder='Search a skill...'
                     sx={{ 
                         flex: 1,
-                        borderColor: '#D4C4B0',
+                        borderColor: 'rgba(255, 255, 255, 0.12)',
+                        backgroundColor: 'rgba(17, 24, 39, 0.4)',
+                        color: '#F9FAFB',
                         '&:hover': {
-                            borderColor: '#1a1a1a',
+                            borderColor: '#14B8A6',
                         },
                         '&:focus-within': {
-                            borderColor: '#1a1a1a',
+                            borderColor: '#14B8A6',
                         }
                     }}
-                    debounceTimeout={1000}
+                    debounceTimeout={500}
                     handleDebounce={handleDebounce}
                 />
                 <Select
                     variant='outlined'
                     size='sm'
-                    placeholder='filter by ...'
+                    placeholder='Filter by ...'
                     multiple
-                    renderValue={(o) => <Fragment>{'filter by ...'}</Fragment>}
+                    renderValue={(o) => <Fragment>{'Filter by ...'}</Fragment>}
                     onChange={(_, newValue: string[] | null) => handleChange(newValue)}
                     value={filter}
                     sx={{
-                        borderColor: '#D4C4B0',
+                        borderColor: 'rgba(255, 255, 255, 0.12)',
+                        backgroundColor: 'rgba(17, 24, 39, 0.4)',
+                        color: '#F9FAFB',
                         '&:hover': {
-                            borderColor: '#1a1a1a',
+                            borderColor: '#14B8A6',
+                        },
+                        '&:focus-within': {
+                            borderColor: '#14B8A6',
                         }
                     }}
                 >
                     {Object.keys(keywords).map((title: string, i: number) => (
                         <Fragment key={title}>
-                            {i !== 0 && <ListDivider role="none" />}
-                            <List sx={{ '--ListItemDecorator-size': '28px' }}>
-                                <ListItem sticky>
-                                    <Typography level="body-xs" sx={{ textTransform: 'uppercase', color: '#8B7355', fontWeight: 600 }}>
+                            {i !== 0 && <ListDivider role="none" sx={{ backgroundColor: 'rgba(255,255,255,0.06)' }} />}
+                            <List sx={{ '--ListItemDecorator-size': '28px', backgroundColor: '#0b0f19' }}>
+                                <ListItem sticky sx={{ backgroundColor: '#0b0f19' }}>
+                                    <Typography level="body-xs" sx={{ textTransform: 'uppercase', color: '#14B8A6', fontWeight: 600 }}>
                                         {title}
                                     </Typography>
                                 </ListItem>
@@ -240,12 +250,14 @@ const Skills = () => {
                                         key={value}
                                         value={value}
                                         sx={{
+                                            color: '#F9FAFB',
                                             [`&.${optionClasses.selected} .${listItemDecoratorClasses.root}`]:
                                             {
                                                 opacity: 1,
+                                                color: '#14B8A6'
                                             },
                                             '&:hover': {
-                                                backgroundColor: '#EDE8E0',
+                                                backgroundColor: 'rgba(20, 184, 166, 0.08)',
                                             }
                                         }}
                                     >
@@ -271,10 +283,11 @@ const Skills = () => {
                         key={value}
                         variant='outlined'
                         sx={{
-                            borderColor: '#D4C4B0',
-                            color: '#1a1a1a',
+                            borderColor: '#14B8A6',
+                            color: '#14B8A6',
+                            backgroundColor: 'rgba(20, 184, 166, 0.05)',
                             '&:hover': {
-                                borderColor: '#1a1a1a',
+                                borderColor: '#0D9488',
                             }
                         }}
                     >
@@ -283,7 +296,7 @@ const Skills = () => {
                 ))}
             </Stack>}
 
-            <Divider sx={{ my: 2, backgroundColor: '#D4C4B0' }} />
+            <Divider sx={{ my: 3, backgroundColor: 'rgba(255, 255, 255, 0.08)' }} />
 
             <Stack direction='row' sx={{ flex: 1, flexWrap: 'wrap', rowGap: 2, justifyContent: 'center' }}>
                 {technologiesArray.map((techEntity, i) => (

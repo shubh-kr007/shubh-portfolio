@@ -65,18 +65,19 @@ const SideNav = () => {
                     top: 10,
                     left: 10,
                     zIndex: 1000,
-                    backgroundColor: scrolled ? '#FAF7F2' : 'rgba(250, 247, 242, 0.9)',
+                    backgroundColor: scrolled ? 'rgba(3, 7, 18, 0.85)' : 'rgba(3, 7, 18, 0.3)',
                     backdropFilter: 'blur(10px)',
                     borderRadius: '10px',
                     padding: '8px',
-                    boxShadow: scrolled ? '0 2px 10px rgba(0,0,0,0.1)' : 'none',
+                    boxShadow: scrolled ? '0 2px 10px rgba(0,0,0,0.3)' : 'none',
                     transition: 'all 0.3s ease',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
                     '&:hover': {
-                        backgroundColor: '#EDE8E0',
+                        backgroundColor: 'rgba(255, 255, 255, 0.08)',
                     }
                 }}
             >
-                <DensityMedium sx={{ color: '#1a1a1a' }} />
+                <DensityMedium sx={{ color: '#F9FAFB' }} />
             </Button>
             
             <Drawer 
@@ -84,7 +85,8 @@ const SideNav = () => {
                 onClose={toggleDrawer(false)}
                 sx={{
                     '& .MuiDrawer-content': {
-                        backgroundColor: '#FAF7F2',
+                        backgroundColor: '#030712',
+                        borderRight: '1px solid rgba(255, 255, 255, 0.08)',
                     }
                 }}
             >
@@ -108,11 +110,11 @@ const SideNav = () => {
                             onClick={toggleDrawer(false)}
                             sx={{
                                 '&:hover': {
-                                    backgroundColor: '#EDE8E0',
+                                    backgroundColor: 'rgba(255, 255, 255, 0.08)',
                                 }
                             }}
                         >
-                            <Close sx={{ color: '#1a1a1a' }} />
+                            <Close sx={{ color: '#F9FAFB' }} />
                         </Button>
                     </Box>
                     
@@ -127,12 +129,12 @@ const SideNav = () => {
                                         borderRadius: '8px',
                                         py: 1.5,
                                         px: 2,
-                                        color: '#1a1a1a',
+                                        color: '#F9FAFB',
                                         fontWeight: 500,
                                         transition: 'all 0.3s ease',
                                         '&:hover': {
-                                            backgroundColor: '#EDE8E0',
-                                            color: '#8B7355',
+                                            backgroundColor: 'rgba(20, 184, 166, 0.1)',
+                                            color: '#14B8A6',
                                             transform: 'translateX(8px)',
                                         }
                                     }}
