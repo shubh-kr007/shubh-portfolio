@@ -128,8 +128,8 @@ const Landing = () => {
                 }}>
                     <Button
                         component="a"
-                        href="/resume/Shubh_Kumar_Fullstack_AI_Resume.pdf"
-                        download="Shubh_Kumar_Fullstack_AI_Resume.pdf"
+                        href="/resume/Shubh_Kumar_Resume.pdf"
+                        download="Shubh_Kumar_Resume.pdf"
                         size='lg'
                         variant='solid'
                         startDecorator={<DownloadOutlined />}

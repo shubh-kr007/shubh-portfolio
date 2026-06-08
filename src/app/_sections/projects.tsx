@@ -59,6 +59,25 @@ const projects: IProject[] = [
         }
     },
     {
+        title: 'Inventra',
+        subtitle: 'SaaS Inventory & Order Management Platform',
+        description: [
+            'Built a production-ready full-stack inventory management platform using React, FastAPI, PostgreSQL, and Docker.',
+            'Developed a transactional order engine with automated stock validation, dynamic pricing, inventory synchronization, and stock restoration on order cancellation.',
+            'Implemented secure authentication using JWT and Google OAuth 2.0, enabling protected routes and seamless user onboarding.',
+            'Containerized the complete application using Docker Compose, orchestrating frontend, backend, and PostgreSQL services with persistent storage volumes.',
+            'Deployed the frontend on Vercel and backend on Render, with integrated Swagger/OpenAPI documentation for API testing and developer productivity.'
+        ],
+        technologies: ['React', 'FastAPI', 'PostgreSQL', 'Docker', 'Docker Compose', 'JWT', 'Google OAuth 2.0', 'Swagger', 'OpenAPI', 'Vercel', 'Render'],
+        github: 'https://github.com/shubh-kr007/Inventra',
+        live: 'https://inventra-lake.vercel.app/',
+        icon: 'work',
+        time: {
+            start: '05/2026',
+            end: '06/2026'
+        }
+    },
+    {
         title: 'Synapse.hr',
         subtitle: 'AI Mock Interview Platform',
         description: [

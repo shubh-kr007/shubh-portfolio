@@ -28,7 +28,7 @@ const educations: IEducation[] = [
         degree: 'B.Tech in Computer Science and Engineering',
         time: {
             start: '09/2022',
-            end: 'Present'
+            end: '06/2026'
         }
     },
     {
